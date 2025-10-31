@@ -1,21 +1,30 @@
 import { evaluate } from "mathjs";
 
 export class Secant {
+    #xInitial
+    #fx
+    #error
+    #table
+    #x1
     constructor(fx,xInitial,x,error) {
-    this.xInitial = xInitial
-    this.fx = fx
-    this.x1 = x
-    this.error = error
-    this.table = []
+    this.#xInitial = xInitial
+    this.#fx = fx
+    this.#x1 = x
+    this.#error = error
+    this.#table = []
     this.maxIter = 200;
   }
 
+  getTable(){
+    return this.#table
+  }
+
   f = (x) =>{
-    return evaluate(this.fx,{x:x})
+    return evaluate(this.#fx,{x:x})
   }
 
   calculate(){
-    let x0 = this.xInitial , x1 = this.x1 , x2 , e=1 , fx
+    let x0 = this.#xInitial , x1 = this.#x1 , x2 , e=1 , fx
     let iteration = 0
     const result = []
   
@@ -35,9 +44,8 @@ export class Secant {
         x1 = x2
   
         iteration++
-      } while (e > this.error && iteration <= this.maxIter)
+      } while (e > this.#error && iteration <= this.maxIter)
   
-      this.table = result
-      return result
+      this.#table = result
     }
 }

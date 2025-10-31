@@ -37,7 +37,8 @@ class SecantPage extends BasePage2 {
         }
       
         const s = new Secant(this.state.fx,this.state.xInitial,this.state.x,this.state.error)
-        this.setState({ table: s.calculate()})
+        s.calculate()
+        this.setState({ table: s.getTable()})
       } catch (error){
         alert(error.message)
       }

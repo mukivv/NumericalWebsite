@@ -24,7 +24,11 @@ class BasePage3 extends NavBar {
   }
 
   getTitle = () => {
-    return ".. Method";
+    throw new Error("Child Class ต้อง Override 'getTitle()'");
+  };
+
+  calculate = () => {
+    throw new Error("Child Class ต้อง Override 'calculate()'");
   };
 
   setError = (error) => this.setState({ error: error });
@@ -172,8 +176,6 @@ class BasePage3 extends NavBar {
       </>
     );
   }
-
-  calculate = () => {};
 
   render() {
     return (
