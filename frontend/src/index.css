@@ -1,0 +1,334 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color: rgba(8, 25, 112, 0.87);
+  background-color: #faffff;
+
+  /* ลบ max-width และ padding ที่นี่ออก */
+  text-align: center;
+}
+
+h2.logo {
+  margin-bottom: 1rem;
+}
+
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(69, 95, 239);
+  color: white;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4rem;
+}
+
+.drop-group {
+  display: inline-block;
+  position: relative;
+}
+
+.drop-button {
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 1em 2em;
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background: rgb(69, 95, 239);
+  transition: all 0.3s ease;
+}
+
+.drop-group:hover .drop-button,
+.drop-group:focus-within .drop-button {
+  background: #272eba;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 30, 219, 0.3);
+}
+
+.drop-select {
+  font-size: 90%;
+  font-weight: normal;
+  display: none;
+  position: absolute;
+  top: 100%;
+  min-width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  border: 2px solid rgb(16, 23, 211);
+}
+
+.drop-select a {
+  color: #272eba;
+  display: block;
+  padding: 0.5rem;
+}
+
+.drop-select a:hover {
+  color: rgb(255, 255, 255);
+  background-color: #272eba;
+}
+
+.drop-group:hover .drop-select {
+  display: block;
+}
+
+td {
+  padding: 0.5rem 1rem;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #faffff;
+}
+
+/* เพิ่ม wrapper สำหรับ content */
+main {
+  min-height: 100vh;
+  padding-top: 80px;
+  /* เว้นที่ให้ navbar */
+  background-color: #faffff;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.content-btn {
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0.6em 1.2em;
+  margin: 1rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: rgb(255, 255, 255); 
+  cursor: pointer;
+  background: #535bf2;
+  transition: all 0.3s ease;
+}
+
+.content-btn:hover {
+  background: #272eba;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #271edb4d;
+}
+
+input {
+  padding: 5px;
+  border-radius: 7px;
+  border-color: #535bf2;
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.ip {
+  padding: 0.8rem;
+}
+
+.ip-matrix {
+  padding: 5px;
+  border-radius: 7px;
+  border-color: #535bf2;
+  outline: none;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.ip-point {
+  padding: 5px;
+  border-radius: 7px;
+  border-color: #535bf2;
+  outline: none;
+  margin: 5px;
+  width: 60px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.div-matrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.div-col-matrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.div-row-matrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#gray-matrix {
+  color: #84858b;
+  background-color: #edeff9;
+  border-color: #6d6d6d;
+}
+.div-mathjax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1rem auto;
+  margin-bottom: 4rem;
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.graph {
+  background-color: white;
+  padding: 1rem;
+  margin: 0rem auto;
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: 700;
+}
+
+/* ========== Table Styling ========== */
+
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  border-radius: 12px ;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 10%;
+  background-color: #faffff;
+  text-align: center;
+}
+
+/* Header Styling */
+thead {
+  background: linear-gradient(135deg, #667eea 0%, #542ade 100%);
+}
+
+thead tr th {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Body Styling */
+tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Cell Styling */
+tbody td {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(8, 25, 112, 0.87);
+}
+
+/* First column (Iteration) */
+tbody tr td:first-child {
+  font-weight: bold;
+  color: #667eea;
+}
+
+/* Last column (Error) */
+tbody tr td:last-child {
+  font-weight: 500;
+  color: #e91e63;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 0.85rem;
+  }
+
+  thead tr th,
+  tbody td {
+    padding: 0.6rem 0.5rem;
+  }
+
+  thead tr th {
+    font-size: 0.9rem;
+  }
+}
