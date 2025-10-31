@@ -18,10 +18,6 @@ import Jacobi from './frontend/Linear Algebra/Jacobi.jsx';
 import GaussSeidel from './frontend/Linear Algebra/GaussSeidel.jsx';
 import Conjugate from './frontend/Linear Algebra/Conjugate.jsx';
 
-{/*import NewtonDivided from './frontend/Interpolation/NewtonDivided.jsx';*/}
-import Lagrange from './frontend/Interpolation/Lagrange.jsx';
-import Spline from './frontend/Interpolation/Spline.jsx';
-
 
 import Trapezoidal from './frontend/Integration/Trapezoidal.jsx';
 import CompositeTrapezoidal from './frontend/Integration/CompositeTrapezoidal.jsx';
@@ -29,7 +25,6 @@ import Simpson from './frontend/Integration/Simpson.jsx';
 import CompositeSimpson from './frontend/Integration/CompositeSimpson.jsx';
 
 import SimpleRegression from './frontend/Extrapolation/SimpleRegression.jsx';
-import MultipleRegression from './frontend/Extrapolation/MultipleRegression.jsx';
 
 function AppInner() {
 
@@ -54,10 +49,6 @@ function AppInner() {
             <Route path="/jacobi" element={<Jacobi />} />
             <Route path="/gauss-seidel" element={<GaussSeidel />} />
             <Route path="/conjugate-gradient" element={<Conjugate />} />
-            {/* ------------ Interpolation --------------*/}
-            {/*<Route path="/newton-divided" element={<NewtonDivided />} />*/}
-            <Route path="/lagrange" element={<Lagrange />} />
-            <Route path="/spline" element={<Spline />} />
             {/* ------------ Integration --------------*/}
             <Route path="/trapezoidal" element={<Trapezoidal />} />
             <Route path="/composite-trapezoidal" element={<CompositeTrapezoidal />} />
@@ -65,10 +56,9 @@ function AppInner() {
             <Route path="/composite-simpson" element={<CompositeSimpson />} />
             {/* ------------ Integration --------------*/}
             <Route path="/simple-regression" element={<SimpleRegression />} />
-            <Route path="/multiple-regression" element={<MultipleRegression />} />
             {/* ถ้าเข้า path ที่ไม่เจอ -> redirect ไปหน้า HomePage */}
             {/*<Route path="/basepage" element={<BasePage5 />} />*/}
-            <Route path="*" element={<Navigate to="/simple-regression" replace />} />
+            <Route path="*" element={<Navigate to="/cramer-rule" replace />} />
         </Routes>
       </main>
     </>

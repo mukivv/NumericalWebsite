@@ -40,18 +40,9 @@ class NavBar extends React.Component {
               </div>
             </div>
             <div className="drop-group">
-              <button className="drop-button"> Interpolation </button>
-              <div className="drop-select">
-                <a href="/newton-divided"> Newton Divided </a>
-                <a href="/lagrange"> Lagrange </a>
-                <a href="/spline"> Spline </a>
-              </div>
-            </div>
-            <div className="drop-group">
               <button className="drop-button"> Extrapolation </button>
               <div className="drop-select">
                 <a href="/simple-regression"> Simple Regression </a>
-                <a href="/multiple-regression"> Multiple Regression </a>
               </div>
             </div>
             <div className="drop-group">
@@ -61,12 +52,6 @@ class NavBar extends React.Component {
                 <a href="/composite-trapezoidal"> Composite Trapezoidal </a>
                 <a href="/simpson"> Simpson </a>
                 <a href="/composite-simpson"> Composite Simpson </a>
-              </div>
-            </div>
-            <div className="drop-group">
-              <button className="drop-button"> Differentiation </button>
-              <div className="drop-select">
-                <a href="/differentiation"> Differentiation </a>
               </div>
             </div>
           </div>
