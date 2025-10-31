@@ -26,6 +26,27 @@ class BasePage extends NavBar {
 
   calculate = () => {};
 
+  getMethod() {
+    return "root1";
+  }
+
+  getExample = async () => {
+    try {
+      const methodName = this.getMethod();
+      const example = await fetch(`http://127.0.0.1:8000/example/${methodName}`).then(res => res.json());
+
+      this.setState({
+        xL: example.xL,
+        xR: example.xR,
+        error: example.error,
+        fx: example.fx
+      });
+    } catch (error) {
+      console.error('Error fetching example:', error);
+      alert('Failed to load example');
+    }
+  };
+
   createGraph = () => {
     const tableX = this.state.table.map((t) => t.Iteration);
     const tableY = this.state.table.map((t) => t.Error);
@@ -102,33 +123,6 @@ class BasePage extends NavBar {
   getTitle = () => {
     return "... Method";
   };
-
-  getExample = async () => {
-  try {
-    const methodName = this.getMethod();
-    
-    const example = await fetch(`http://127.0.0.1:8000/example/${methodName}`);
-    
-    if (!response.ok) {
-      throw new Error('No examples found');
-    }
-    
-    const data = await response.json();
-    
-    this.setState({
-      xL: data.xL,
-      xR: data.xR,
-      error: data.error,
-      fx: data.fx
-    });
-    
-  } catch (error) {
-    console.error('Error fetching example:', error);
-    alert('Failed to load example');
-  }
-};
-
-getMethod = () => { };
 
   renderForm() {
     return (

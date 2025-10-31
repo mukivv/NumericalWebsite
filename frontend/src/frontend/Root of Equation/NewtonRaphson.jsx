@@ -8,6 +8,10 @@ class NewtonRaphsonPage extends BasePage2 {
     return " ⊹ ࣪ ˖ Newton Raphson Method  ⋆.𐙚 ̊ "
   }
 
+  getMethod() {
+    return "newton"
+  }
+
   calculate = ()=>{
       try {
         if (!this.state.fx){

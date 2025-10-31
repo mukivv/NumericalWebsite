@@ -8,6 +8,8 @@ class OnePointPage extends BasePage2 {
     return " ⊹ ࣪ ˖ One-Point Iteration Method  ⋆.𐙚 ̊ "
   }
 
+  getMethod() { return "onepoint" }
+
   createTable = () => {
     return (
       <table>

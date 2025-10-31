@@ -34,7 +34,7 @@ export class Cholesky {
         }
 
         if (check){
-            throw new Error("Matrix A isn't a Symmetric Matrix or Positive Definite");
+            throw new Error("Matrix A isn't a Symmetric Matrix");
         }
 
         const L = Array.from({ length: this.n }, () => Array(this.n).fill(0));

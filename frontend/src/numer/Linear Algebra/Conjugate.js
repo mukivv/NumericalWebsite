@@ -34,6 +34,21 @@ export class Conjugate {
         const A = a.map(row => row.map(val => parseFloat(val) || 0))
         const B = b.map(val => parseFloat(val) || 0)
         const X = x.map(val => parseFloat(val) || 0)
+
+        let check = 0
+        for (let i=0;i<this.n;i++){
+            if (A[i][i] <= 0) check = 1;
+            for (let j=0;j<this.n;j++){
+                if (A[i][j] != A[j][i]){
+                    check = 1
+                }
+            }
+        }
+
+        if (check){
+            throw new Error("Matrix A isn't a Symmetric Matrix");
+        }
+
         const result = []
         let count = 0 , lamda = 0 , alpha = 0 , err = 0
 
@@ -64,7 +79,7 @@ export class Conjugate {
                 error: err * 100
             })
 
-        } while (err > this.error)
+        } while (err > this.error && count < 100)
 
         return result
     }

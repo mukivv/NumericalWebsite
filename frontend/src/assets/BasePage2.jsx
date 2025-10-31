@@ -18,6 +18,24 @@ class BasePage2 extends BasePage {
 
   setx = (x) => this.setState({ x: x });
 
+  getMethod() {};
+
+  getExample = async () => {
+    try {
+      const methodName = this.getMethod();
+      const example = await fetch(`http://127.0.0.1:8000/example/${methodName}`).then(res => res.json());
+
+      this.setState({
+        xInitial: example.xInitial,
+        error: example.error,
+        fx: example.fx
+      });
+    } catch (error) {
+      console.error('Error fetching example:', error);
+      alert('Failed to load example');
+    }
+  };
+
   renderForm() {
     return (
       <>

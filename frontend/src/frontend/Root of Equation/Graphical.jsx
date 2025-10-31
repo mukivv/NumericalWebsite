@@ -8,10 +8,6 @@ class GraphicalPage extends BasePage {
     return " ⊹ ࣪ ˖ Graphical Method  ⋆.𐙚 ̊ "
   }
 
-  getMethod = () => { 
-    return "graphical"
-  };
-
   calculate = ()=>{
     try {
       if (!this.state.fx){

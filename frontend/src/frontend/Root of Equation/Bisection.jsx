@@ -8,10 +8,6 @@ class BisectionPage extends BasePage {
     return " ⊹ ࣪ ˖ Bisection Method  ⋆.𐙚 ̊ "
   }
 
-  getMethod = () => { 
-    return "bisection"
-  };
-
   calculate = ()=>{
     try {
       if (!this.state.fx){

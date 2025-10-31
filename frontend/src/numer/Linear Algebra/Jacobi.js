@@ -39,7 +39,7 @@ export class Jacobi {
                 X: [...X],
                 error: err.map(val => val * 100)
             })
-        } while (check != 0)
+        } while (check != 0 && count < 100)
         console.log(result)
         return result
     }

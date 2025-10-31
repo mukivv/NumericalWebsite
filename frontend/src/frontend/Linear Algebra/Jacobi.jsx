@@ -92,6 +92,7 @@ class JacobiPage extends BasePage3 {
           {this.renderForm()}
           <div> {this.renderMatrix()} </div>
           <div>
+            <button className="content-btn" type="button" onClick={this.getExample}>Example</button>
               <button className="content-btn" type="button" onClick={this.calculate}> Calculate </button>
               <button className="content-btn" type="submit" onClick={this.clear}>Clear</button>
           </div>

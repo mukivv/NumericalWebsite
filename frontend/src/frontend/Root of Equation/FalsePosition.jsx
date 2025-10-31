@@ -8,10 +8,6 @@ class FalsePositionPage extends BasePage {
     return " ⊹ ࣪ ˖ False Position Method  ⋆.𐙚 ̊ "
   }
 
-  getMethod = () => { 
-    return "false-position"
-  };
-
   calculate = ()=>{
     try {
       if (!this.state.fx){

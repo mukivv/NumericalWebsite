@@ -8,6 +8,27 @@ class SecantPage extends BasePage2 {
     return " ⊹ ࣪ ˖ Secant Iteration Method  ⋆.𐙚 ̊ "
   }
 
+  getMethod() {
+    return "secant";
+  }
+
+  getExample = async () => {
+    try {
+      const methodName = this.getMethod();
+      const example = await fetch(`http://127.0.0.1:8000/example/${methodName}`).then(res => res.json());
+
+      this.setState({
+        xInitial: example.xInitial,
+        error: example.error,
+        fx: example.fx,
+        x: example.x
+      });
+    } catch (error) {
+      console.error('Error fetching example:', error);
+      alert('Failed to load example');
+    }
+  };
+
   calculate = ()=>{
       try {
         if (!this.state.fx){

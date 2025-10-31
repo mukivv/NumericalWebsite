@@ -54,7 +54,7 @@ function AppInner() {
             <Route path="/composite-trapezoidal" element={<CompositeTrapezoidal />} />
             <Route path="/simpson" element={<Simpson />} />
             <Route path="/composite-simpson" element={<CompositeSimpson />} />
-            {/* ------------ Integration --------------*/}
+            {/* ------------ Regression --------------*/}
             <Route path="/simple-regression" element={<SimpleRegression />} />
             {/* ถ้าเข้า path ที่ไม่เจอ -> redirect ไปหน้า HomePage */}
             {/*<Route path="/basepage" element={<BasePage5 />} />*/}

@@ -22,6 +22,28 @@ class BasePage4 extends NavBar {
 
   getTitle = () => {}
 
+  getMethod() {
+    return "regression";
+  }
+
+  getExample = async () => {
+    try {
+      const methodName = this.getMethod();
+      const example = await fetch(`http://127.0.0.1:8000/example/${methodName}`).then(res => res.json());
+
+      this.setState({
+        n: example.n,
+        X: example.X,
+        Y: example.Y,
+        findX: example.findX,
+        m: example.m
+      });
+    } catch (error) {
+      console.error('Error fetching example:', error);
+      alert('Failed to load example');
+    }
+  };
+
   setFindX = (e) => this.setState({ findX: e });
 
   setM = (e) => { this.setState({m:e}) }
@@ -152,6 +174,7 @@ class BasePage4 extends NavBar {
           {this.renderForm()}
           <div> {this.renderVector()} </div>
           <div>
+              <button className="content-btn" type="button" onClick={this.getExample}>Example</button>
               <button className="content-btn" type="button" onClick={this.calculate}> Calculate </button>
               <button className="content-btn" type="submit" onClick={this.clear}>Clear</button>
           </div>

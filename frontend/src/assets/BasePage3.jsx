@@ -29,7 +29,7 @@ class BasePage3 extends NavBar {
 
   setError = (error) => this.setState({ error: error });
 
-   getMethod() {
+  getMethod() {
     return "matrix";
   }
 
@@ -41,7 +41,8 @@ class BasePage3 extends NavBar {
       this.setState({
         A: example.aDB,
         B: example.bDB,
-        n: example.n
+        n: example.n,
+        X0: example.xInitial
       });
     } catch (error) {
       console.error('Error fetching example:', error);
